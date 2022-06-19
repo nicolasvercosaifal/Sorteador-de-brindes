@@ -1,0 +1,120 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.space {
+    width: 25%;
+    border: 2px  solid #17a39700;
+    border-radius: 10px;
+    
+    height: 30em;
+    margin: auto;
+    padding: 8px;
+}
+
+.luckydraw {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(239, 239, 239); */
+    margin: 40px auto;
+    
+    height: 40em;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+    
+}
+
+.list {
+    width: 480px;
+    height: 35em;
+    padding: 0 10px;
+    margin-bottom: 25px;
+    overflow: auto;
+}
+
+li {
+    color: #e6e6e6;
+    width: 100%;
+    margin-bottom: 22px;
+    list-style-type: none;
+    height: 4em;
+    border-bottom: .5px solid hsla(0, 0%, 40%, 0.396);
+}
+
+li div {
+    font-size: 12px;
+    color: #d7d7d7;
+}
+
+.nameAndNumber {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.name {
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+.number {
+    font-weight: lighter;
+}
+
+.number span {
+    font-weight: bold;
+}
+
+.navigateRegisterButton {
+    color:#d7d7d7;
+
+}
+
+.drawButton {
+    background-color: #17A398;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 480px;
+}
+
+.button-area button {
+    width: 150px;
+}
+
+ 
+
+ .winner {
+    border: 2px  solid #17A398;
+    border-radius: 10px;
+    width: 25%;
+    height: 30em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    
+} 
+
+h2 {
+    color: #d7d7d7;
+    font-size: 14pt;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.winnerNumber {
+    font-weight: bolder;
+    font-size: 15pt;
+}
+
+.delete {
+    border: 2px solid rgb(155, 54, 54);
+    color: #e44848;
+    border: none;
+}
