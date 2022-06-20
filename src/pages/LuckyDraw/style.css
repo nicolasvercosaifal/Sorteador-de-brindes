@@ -88,9 +88,7 @@ li div {
     width: 150px;
 }
 
- 
-
- .winner {
+.winner {
     border: 2px  solid #17A398;
     border-radius: 10px;
     width: 25%;
@@ -98,7 +96,7 @@ li div {
     margin: auto;
     display: flex;
     flex-direction: column;
-    
+    padding-left: 6px;
 } 
 
 h2 {

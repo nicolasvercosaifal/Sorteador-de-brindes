@@ -63,16 +63,17 @@ export default function LuckyDraw() {
                                     <span className="number"> Número da sorte: <span>{i.number}</span> </span>
                                 </div>
 
-                                <div>{i.email}
-                                    <span> aniversário: {i.date}
-                                    </span> {i.number}
+                                <div>
+                                    <span> email: <b>{i.email}</b></span>
+                                    <span> aniversário: <b>{i.date} </b></span>
+                                    <span> número: <b>{i.number}</b></span>
                                 </div>
                             </li>)
                     })}
 
                 </ul>
                 <div className="button-area">
-                    { lista &&
+                    {lista &&
                         <button className="delete" onClick={deleteAll}>Deletar lista</button>
                     }
                     <button className="navigateRegisterButton" onClick={() => navigate("/cadastro")}>Novo participante</button>

@@ -1,13 +1,13 @@
 import { MdClose } from "react-icons/md";
 export const Input = (props) => {
 
- 
- 
+
+
 
     return (
         <label>
             {props.title ? <span>{props.title}</span> : <span>label</span>}
-            <div className={props.wrapClass}>
+            <div className={"wrapLabel"}>
                 <input
                     className={props.inputClass}
                     ref={props.myInputRef}
@@ -17,7 +17,9 @@ export const Input = (props) => {
                     type={props.inputType}
                     onChange={((e) => props.setter(e.target.value))}
                 />
-                <MdClose className={'icon'} color="#FE4A49" size={20} />
+                 <div className={'hideIcon'} ref={props.myIconRef}>
+                    <MdClose color="#FE4A49" size={20} />
+                 </div> 
             </div>
         </label>
     )

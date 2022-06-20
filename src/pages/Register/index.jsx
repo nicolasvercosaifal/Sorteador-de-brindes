@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import { useState } from "react";
 import { Input } from "../../components/MyInput";
@@ -11,18 +11,13 @@ export default function Register() {
 
     let navigate = useNavigate();
 
-    const [participant, setParticipant] = useState()
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [date, setDate] = useState('');
     const [luckyNumber, setLuckyNumber] = useState(NaN);
 
     let list = localStorage.getItem("list") ? JSON.parse(localStorage.getItem('list')) : [];
-
-    const [isNameValid, setIsNameValid] = useState(false);
-    const [isEmailValid, setIsEmailValid] = useState(false);
-    const [isDateValid, setIsDateValid] = useState(false);
-    const [isLuckyNumberValid, setIsLuckyNumberValid] = useState(false);
 
 
     const nameInput = useRef(null);
@@ -58,17 +53,27 @@ export default function Register() {
 
         nameInput.current.classList.toggle("inputValid", validateName(name));
         nameInput.current.classList.toggle("inputError", !validateName(name))
+        iconNameRef.current.classList.toggle("hideIcon", validateName(name));
+        iconNameRef.current.classList.toggle("showIcon", !validateName(name));
+
 
         emailInput.current.classList.toggle("inputValid", validateEmail(email));
         emailInput.current.classList.toggle("inputError", !validateEmail(email));
+        iconEmailRef.current.classList.toggle("hideIcon", validateEmail(email));
+        iconEmailRef.current.classList.toggle("showIcon", !validateEmail(email));
 
 
         dateInput.current.classList.toggle("inputValid", validateBirthday(date));
         dateInput.current.classList.toggle("inputError", !validateBirthday(date));
+        iconDateRef.current.classList.toggle("hideIcon", validateBirthday(date));
+        iconDateRef.current.classList.toggle("showIcon", !validateBirthday(date));
 
 
         luckyNumberInput.current.classList.toggle("inputValid", validateLuckyNumber(luckyNumber));
         luckyNumberInput.current.classList.toggle("inputError", !validateLuckyNumber(luckyNumber));
+        iconLuckyNumberRef.current.classList.toggle("hideIcon", validateLuckyNumber(luckyNumber));
+        iconLuckyNumberRef.current.classList.toggle("showIcon", !validateLuckyNumber(luckyNumber));
+
 
         if (validateName(name) && validateEmail(email) && validateBirthday(date) && validateLuckyNumber(luckyNumber)) {
             handleSave()
@@ -89,16 +94,13 @@ export default function Register() {
                 <Input
                     title="Nome"
                     setter={setName}
-                    isValid={isNameValid}
                     MyOnBlur={validateName}
                     myInputRef={nameInput}
                     myIconRef={iconNameRef}
-
                 />
                 <Input
                     title="Email"
                     setter={setEmail}
-                    isValid={isEmailValid}
                     MyOnBlur={validateEmail}
                     myInputRef={emailInput}
                     myIconRef={iconEmailRef}
@@ -107,8 +109,6 @@ export default function Register() {
                     title="Data de aniversário"
                     inputType="date"
                     setter={setDate}
-                    isValid={isDateValid}
-
                     myInputRef={dateInput}
                     myIconRef={iconDateRef}
                     wrapClass="short-input"
@@ -117,8 +117,6 @@ export default function Register() {
                     title="Número da sorte"
                     inputType="number"
                     setter={setLuckyNumber}
-                    isValid={isLuckyNumberValid}
-                    //MyOnBlur={validateLuckyNumber}
                     myInputRef={luckyNumberInput}
                     myIconRef={iconLuckyNumberRef}
                     wrapClass="short-input"
@@ -126,8 +124,8 @@ export default function Register() {
 
             </form>
             <div className="buttonArea">
-                <button type="submit" form="my" className="cancel" onClick={cancel}>Cancelar</button>
-                <button className="registerButton" onClick={handleSubmit}>Cadastrar</button>
+                <button className="cancel" onClick={cancel}>Cancelar</button>
+                <button type="submit" form="my" className="registerButton" onClick={handleSubmit}>Cadastrar</button>
             </div>
         </div>
     )
