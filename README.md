@@ -1,7 +1,5 @@
 Projeto criado usando reactJS.
 
 
-### npm install
-
-
+para rodar use no terminal o comando:
 ### npm start 
