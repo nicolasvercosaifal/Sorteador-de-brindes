@@ -5,7 +5,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/cypress/node_modules
 # testing
 /coverage
 
