@@ -158,3 +158,16 @@ button:active {
     border: none;
     color: #e44848;
 }
+
+.hideMsgError {
+    display: none;
+}
+
+.errorMsg {
+    color: #e44848;
+}
+
+.errorMsg::after {
+    content: 'errooooooo';
+    color: #e44848;
+}

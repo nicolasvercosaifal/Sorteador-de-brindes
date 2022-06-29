@@ -1,3 +1,4 @@
+
 import { MdClose } from "react-icons/md";
 export const Input = (props) => {
 
@@ -17,10 +18,15 @@ export const Input = (props) => {
                     type={props.inputType}
                     onChange={((e) => props.setter(e.target.value))}
                 />
-                 <div className={'hideIcon'} ref={props.myIconRef}>
+                <div className={'hideIcon'} ref={props.myIconRef}>
                     <MdClose color="#FE4A49" size={20} />
-                 </div> 
+                </div>
             </div>
+            <span
+                className="hideMsgError"
+                ref={props.myMsgRef}
+            >Input inválido
+            </span>
         </label>
     )
 

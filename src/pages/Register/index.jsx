@@ -30,6 +30,9 @@ export default function Register() {
     const iconDateRef = useRef('icon');
     const iconLuckyNumberRef = useRef('icon');
 
+
+    const nameError = useRef(null);
+
     function handleSave() {
         const data = {
             "name": name,
@@ -55,8 +58,7 @@ export default function Register() {
         nameInput.current.classList.toggle("inputError", !validateName(name))
         iconNameRef.current.classList.toggle("hideIcon", validateName(name));
         iconNameRef.current.classList.toggle("showIcon", !validateName(name));
-
-
+ 
         emailInput.current.classList.toggle("inputValid", validateEmail(email));
         emailInput.current.classList.toggle("inputError", !validateEmail(email));
         iconEmailRef.current.classList.toggle("hideIcon", validateEmail(email));
@@ -97,6 +99,7 @@ export default function Register() {
                     MyOnBlur={validateName}
                     myInputRef={nameInput}
                     myIconRef={iconNameRef}
+                    myMsgError={nameError}
                 />
                 <Input
                     title="Email"
