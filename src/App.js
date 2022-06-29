@@ -2,13 +2,11 @@ import { Route, Routes } from "react-router-dom";
  
 import Cadastro from "./pages/Register";
 import Sorteio from "./pages/LuckyDraw";
-import { Home } from "./pages/Home";
-import Teste from "./pages/Teste";
-
+ 
+ 
 function App() {
   return (
     <Routes>
-     {/*  <Route path="/" element={<Home />} /> */}
      <Route path="/" element={<Sorteio />} />
       <Route path="/cadastro" element={<Cadastro />} />
     </Routes>
